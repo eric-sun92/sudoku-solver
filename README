@@ -1,0 +1,5 @@
+this is a sudoku solver,
+insert inputs into a blank sudoku puzzle and if it is solvable, it auto solves
+
+used a sudoku solver API, imported it into backend to prevent API_KEY from getting leaked
+learned fetch, json, post requests as well as basic js/dom practice
