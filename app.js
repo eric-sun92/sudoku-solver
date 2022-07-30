@@ -13,7 +13,7 @@ for (let i = 0; i < squares; i++) {
   if (
     ((i % 9 == 0 || i % 9 == 1 || i % 9 == 2) && i < 21) ||
     ((i % 9 == 6 || i % 9 == 7 || i % 9 == 8) && i < 27) ||
-    ((i % 9 == 3 || i % 9 == 4 || i % 9 == 5) && i > 21 && i < 53) ||
+    ((i % 9 == 3 || i % 9 == 4 || i % 9 == 5) && i > 27 && i < 53) ||
     ((i % 9 == 0 || i % 9 == 1 || i % 9 == 2) && i > 53) ||
     ((i % 9 == 6 || i % 9 == 7 || i % 9 == 8) && i > 53)
   ) {
@@ -51,7 +51,6 @@ const solve = () => {
   joinValues();
   const data = { numbers: submission.join("") };
 
-  console.log("data", data);
   fetch("http://localhost:8000/solve", {
     method: "POST",
     headers: {
@@ -61,7 +60,6 @@ const solve = () => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       populate(data.data.canBeSolved, data.data.solution);
       submission = [];
     })
@@ -69,3 +67,17 @@ const solve = () => {
 };
 
 solveBtn.addEventListener("click", solve);
+
+// fetch('url', {
+//     method: "POST",
+//     headers: {
+//         'content-type':"application/json"
+//     },
+//     body: JSON.stringify(data)
+// }).then(response => {
+//     response.json()
+// }).then(data => {
+//     console.log(`this is finally in js object ${data}`)
+// }).catch(error => {
+//     console.log(error)
+// })

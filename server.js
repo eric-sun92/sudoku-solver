@@ -34,3 +34,25 @@ app.post("/solve", (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`server listening on port ${PORT}`));
+
+app.post("url", (req, res) => {
+  res.json(data);
+});
+
+//instead of fetch, axios uses .request
+// const x = {
+//     method: 'POST',
+//     url: 'api_url',
+//     headers: {
+//         'content-type': 'application/json',
+//         'api_key': process.env.API_KEY,
+//         'api_host': 'sudoku.solver'
+//     },
+//     data: req.body.numbers
+// }
+
+// axios.request(x).then((response) => {
+//     res.json(response.body)
+// }).catch(error => {
+//     console.log(error)
+// })
